@@ -11,7 +11,7 @@ pipeline {
         }  
         stage('Create zip file') {
             steps {
-                sh 'wget https://github.com/gad0788/ansible-dev1.git/archive/refs/heads/main.zip'
+                sh 'wget https://github.com/gad0788/ansible-dev1/archive/refs/heads/main.zip'
                
             }
         }
