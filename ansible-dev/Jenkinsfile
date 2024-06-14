@@ -6,7 +6,7 @@ pipeline {
         stage('Check working dir') {
             steps {
                 sh 'pwd'
-                sh 'ls'
+                sh 'ls -a'
             }
         }
         stage('Checking time on server') {
