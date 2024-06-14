@@ -3,7 +3,7 @@ pipeline {
         label 'ansible-master'
     }
     stages {
-        stage('Check working directory') {
+        stage('Check working dir') {
             steps {
                 sh 'pwd'
                 sh 'ls'
