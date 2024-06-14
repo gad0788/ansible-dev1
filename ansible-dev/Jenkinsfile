@@ -15,5 +15,10 @@ pipeline {
                
             }
         }
+        stage('Delete old artifacts if exist'){
+         steps{
+          sh 'rm -rf *.zip || echo "" '
+          }
+        }
     }
 }
