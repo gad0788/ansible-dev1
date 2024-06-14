@@ -9,5 +9,11 @@ pipeline {
                 sh 'ls'
             }
         }
+        stage('Checking time on server') {
+            steps {
+                sh 'uptime'
+               
+            }
+        }
     }
 }
