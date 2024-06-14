@@ -8,10 +8,10 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -a'
             }
-        }
-        stage('Checking time on server') {
+        }  
+        stage('Create zip file') {
             steps {
-                sh 'uptime'
+                sh 'wget https://github.com/gad0788/ansible-dev1.git/archive/refs/heads/main.zip'
                
             }
         }
