@@ -9,7 +9,7 @@ pipeline {
                 sh 'ls -a'
             }
         }  
-        stage('Create zip file') {
+        stage('Create zip files') {
             steps {
                 sh 'wget https://github.com/gad0788/ansible-dev1/archive/refs/heads/main.zip'
                
