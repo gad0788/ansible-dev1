@@ -33,7 +33,7 @@ pipeline {
                 sh '''
                 cd /home/ec2-user/ansible
                 unzip -o main.zip.1
-                rm -f main.zip.1
+                rm -rf main.zip.1
                 cp -rf ansible-dev1-main/*
                 rm -rf ansible-dev1-main
                 
