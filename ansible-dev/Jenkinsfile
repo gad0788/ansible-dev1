@@ -28,11 +28,17 @@ pipeline {
         }
         stage('deliver playbooks on /home/ec2-user/ansible'){
             steps{
-                sh 'mkdir /home/ec2-user/ansible'
-                sh 'cp -rf /home/ec2-user/jenkins/workspace/ansible-playbook/main.zip.1 /home/ec2-user/ansible'
-                sh 'cd /home/ec2-user/ansible'
-                sh 'unzip main.zip.1'
-                sh 'rm -f main.zip'
+                sh 'mkdir -p /home/ec2-user/ansible'
+                sh 'cp -r /home/ec2-user/jenkins/workspace/ansible-playbook/main.zip.1 /home/ec2-user/ansible'
+                sh '''
+                cd /home/ec2-user/ansible
+                unzip -o main.zip.1
+                rm -f main.zip.1
+                cp -rf ansible-dev1-main/*
+                rm -rf ansible-dev1-main
+                
+                '''
+                
             }
         }
     }
