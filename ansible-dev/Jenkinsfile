@@ -8,18 +8,19 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -a'
             }
-        }  
-        stage('Create zip files') {
-            steps {
-                sh 'wget https://github.com/gad0788/ansible-dev1/archive/refs/heads/main.zip'
-               
-            }
         }
         stage('Delete old artifacts if exist'){
          steps{
           sh 'rm -rf *.zip || echo "" '
           }
         }
+        stage('Create zip files') {
+            steps {
+                sh 'wget https://github.com/gad0788/ansible-dev1/archive/refs/heads/main.zip'
+               
+            }
+        }
+        
         stage('Uploading artifacts to jfrog'){
             steps{
             sh 'curl -uadmin:AP3yQAuEtNW52NMLC1yXozr4nbt -T /home/ec2-user/jenkins/workspace/ansible-playbook \
