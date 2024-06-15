@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Uploading artifacts to jfrog'){
             steps{
-            sh 'curl -uadmin:AP3yQAuEtNW52NMLC1yXozr4nbt -T /home/ec2-user/jenkins/workspace/ansible-playbook "http://ec2-54-196-24-254.compute-1.amazonaws.com:8081/artifactory/playbooks/playbooks_${BUILD_ID}.zip"'
+            sh 'curl -uadmin:AP3yQAuEtNW52NMLC1yXozr4nbt -T /home/ec2-user/jenkins/workspace/ansible-playbook "http://ec2-54-196-24-254.compute-1.amazonaws.com:8081/artifactory/playbooks/playbooks_${BUILD_ID}.zip2"'
             }
         }
     }
