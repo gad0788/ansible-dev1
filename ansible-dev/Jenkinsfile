@@ -29,7 +29,7 @@ pipeline {
         }
         stage('Check the target server connectivity'){
             steps{
-                sh 'ansible all -m ping'
+                sh 'ansible ws -m ping'
             }
         }
     }
