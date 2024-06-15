@@ -27,18 +27,9 @@ pipeline {
             "http://ec2-54-196-24-254.compute-1.amazonaws.com:8081/artifactory/playbooks/playbooks_${BUILD_ID}.zip2"'
             }
         }
-        stage('deliver playbooks on /home/ec2-user/ansible'){
+        stage('Check the target server connectivity'){
             steps{
-                sh 'mkdir -p /home/ec2-user/ansible'
-                sh 'cp -r /home/ec2-user/jenkins/workspace/ansible-playbook/main.zip /home/ec2-user/ansible'
-                sh '''
-                cd /home/ec2-user/ansible
-                unzip -o main.zip
-                rm -f main.zip
-                cd /home/ec2-user/ansible/ansible-dev1-main/ansible-dev
-                
-                '''
-                
+                sh 'ansible all -m ping'
             }
         }
     }
